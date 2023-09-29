@@ -79,3 +79,27 @@ print("Generated Password:", password)
 
 
 
+
+
+# Binary search algorithm
+
+array = sorted([1,2,3,4,5,6,7,8,9,20,11,12,18,13,14,15,10,22,16,17,19,25])
+var = 10
+
+while True:
+    middle_index = (len(array) - 1) // 2
+    middle_value = array[middle_index]
+
+    if var == middle_value:
+        print("Matched")
+        break 
+    elif var < middle_value:
+        array = array[:middle_index] 
+    else:
+        array = array[middle_index + 1:] 
+
+    if not array:
+        print("Value not found")
+        break  
+
+
