@@ -103,3 +103,32 @@ while True:
         break  
 
 
+import datetime
+from datetime import timedelta
+import datetime
+from datetime import timedelta
+import pygame
+
+def time_func(year, month, day, hour, minute, second, sound_file):
+    specified_time = datetime.datetime(year, month, day, hour, minute, second)
+
+    
+    pygame.mixer.init()
+
+    while True:
+        current_time = datetime.datetime.now()
+        if current_time >= specified_time:
+            print("Time is now!")
+            pygame.mixer.music.load(sound_file)
+            pygame.mixer.music.play()
+            break
+
+year = int(input("Enter year: "))
+month = int(input("Enter month: "))
+day = int(input("Enter day: "))
+hour = int(input("Enter hour: "))
+minute = int(input("Enter minute: "))
+second = int(input("Enter second: "))
+sound_file = input("Enter the path to the sound file: ")
+
+time_func(year, month, day, hour, minute, second, sound_file)
